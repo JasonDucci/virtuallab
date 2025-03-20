@@ -5,6 +5,7 @@
 
 3. [Install Ubuntu Server](#install2)
 
+4. [Create a New Virtual Machine and attach Ubuntu Server](#virtualmachine)
 <a name="overview"></a>
 ## 1. Overview
 Oracle VirtualBox is a cross-platform virtualization application. That means it
@@ -118,8 +119,10 @@ Download the Ubuntu Server ISO
 Go to the Ubuntu [website](https://ubuntu.com/download/server) and download the latest Ubuntu Server ISO file.
 
 <a name="virtualmachine"></a>
-## 4. Create a New Virtual Machine
+## 4. Create a New Virtual Machine and attach Ubuntu Server
 
 Open VirtualBox and click New to create a new virtual machine.
 
 Name your VM (e.g., "UbuntuServer") and select the download ISO file of Ubuntu Server
+
+
