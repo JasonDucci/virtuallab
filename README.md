@@ -116,3 +116,10 @@ Install it by following the on-screen instructions for your operating system.
 ## 3. Install Unbuntu Server
 Download the Ubuntu Server ISO
 Go to the Ubuntu [website](https://ubuntu.com/download/server) and download the latest Ubuntu Server ISO file.
+
+<a name="virtualmachine"></a>
+## 4. Create a New Virtual Machine
+
+Open VirtualBox and click New to create a new virtual machine.
+
+Name your VM (e.g., "UbuntuServer") and select the download ISO file of Ubuntu Server
