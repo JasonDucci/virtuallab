@@ -6,6 +6,10 @@
 3. [Install Ubuntu Server](#install2)
 
 4. [Create a New Virtual Machine and attach Ubuntu Server](#virtualmachine)
+
+5. [Setup Ubuntu Server](#setup)
+
+6. [Connect SSH Server](#connectssh)
 <a name="overview"></a>
 ## 1. Overview
 Oracle VirtualBox is a cross-platform virtualization application. That means it
@@ -121,8 +125,100 @@ Go to the Ubuntu [website](https://ubuntu.com/download/server) and download the 
 <a name="virtualmachine"></a>
 ## 4. Create a New Virtual Machine and attach Ubuntu Server
 
-Open VirtualBox and click New to create a new virtual machine.
+- Open VirtualBox and click New to create a new virtual machine. Name your VM (e.g., "UbuntuServer") and select the download ISO file of Ubuntu Server
 
-Name your VM (e.g., "UbuntuServer") and select the download ISO file of Ubuntu Server
+<img src = "step1.png">
 
+- Configure the Unattended guest OS install setup
+
+<img src = "step2.png">
+
+- Configure the hardware resources (1GB RAM and 1 CPU is recommended but more is better for performance)
+
+<img src = "step3.png">
+
+- Configure hard disk space (10GB minimum)
+
+<img src = "step4.png">
+
+- Review everything then press Finish 
+
+Once click on Finish, Oracle VM will automatically turn on Ubuntu Server
+
+<a name="setup"></a>
+## 5. Setup Ubuntu Server
+
+Follow the on-screen instructions to install Ubuntu Server. You'll need to:
+
+- Select your language and keyboard layout.
+
+<img src = "step5.png">
+<img src = "step6.png">
+
+- Install Ubuntu Server
+<img src = "step7.png">
+
+- Configure network
+<img src = "step8.png">
+
+- Configure Storage
+<img src = "step9.png">
+<img src = "step10.png">
+
+Once click Done and Continue
+
+- Set up user credentials (username, password).
+<img src = "step11.png">
+
+- Select and install software as required (e.g., OpenSSH Server for remote access).
+<img src = "step12.png">
+
+- Install any necessary snaps (optional)
+<img src = "step13.png">
+
+Press Done and wait for the system installation
+Once Complete, reboot the system
+
+After reboot, enter your username and password to enter Ubuntu Server
+
+<a name="sshconnect"></a>
+## 6. Connect SSH server on Ubuntu Server
+
+After enter username and password
+
+### Ensure SSH is Installed on the Server
+If you installed the OpenSSH Server during the Ubuntu Server setup, SSH should already be enabled.
+
+If not, you can install it with the following command:
+```sh 
+sudo apt update
+sudo apt install openssh-server
+```
+
+### Find Your Server's IP Address
+
+Log in to your server directly and check the IP address using:
+
+```sh 
+ip addr
+```
+Look for the IP under the inet section of the network interface (e.g., eth0 or ens33).
+
+### Use an SSH Client on Your Local Machine
+Linux/macOS: Use the terminal.
+
+Windows: Use the built-in SSH client in Command Prompt, PowerShell, or apps like PuTTY.
+
+### Connect to the Server
+Open a terminal or SSH client and run:
+```sh 
+ssh username@server-ip
+```
+Replace username with the user you created during server installation and server-ip with the IP address of your server.
+
+### Accept the Server's Key Fingerprint
+On your first connection, you'll be asked to confirm the server's fingerprint. Type yes to proceed.
+
+### Enter the Password
+Enter the password you set for the user during installation. After this, you'll be logged into the server.
 
