@@ -204,6 +204,9 @@ ip addr
 ```
 Look for the IP under the inet section of the network interface (e.g., eth0 or ens33).
 
+**Note**: Check the network Setting in Oracle VM where the adapter is attached to the current network on your host system for the most accurate IP address
+<img src = "step14.png">
+
 ### Use an SSH Client on Your Local Machine
 Linux/macOS: Use the terminal.
 
